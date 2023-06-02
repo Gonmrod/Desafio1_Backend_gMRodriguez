@@ -1,11 +1,9 @@
-/* Se procede a crear la clase ProductManager
-en donde en el método constructor se inicializan las propiedades: -products -productsId en el objeto this.products que es un arreglo que almacenerá los productos y productId es un contador que generará identificadores únicos para cada procuto.*/
+/* Se procede a crear la clase ProductManager en donde en el método constructor se inicializan las propiedades: -products -productsId en el objeto this.products que es un arreglo que almacenerá los productos y productId es un contador que generará identificadores únicos para cada procuto.*/
 class ProductManager {
     constructor() {
         this.products = [];
         this.productId = 1;
     }
-
 
 //El método getProducts devuelve el arreglo products, que permitirá acceder a la lista de productos desde fuera de la clase.
     getProducts() {
@@ -25,7 +23,6 @@ class ProductManager {
             return;
         }
 
-
 /* Creo el objeto product con las propiedades requeridas, incluído un identificador único (id) que se genera utilizando el contador productId++, para que el siguiente producto tengun un id único */        
         const product = {
             id: this.productId++,
@@ -42,7 +39,6 @@ class ProductManager {
         console.log("El producto ha sido agregado correctamente.");
     }
 
-
 /* El método getProductById busca un producto en el arreglo products utilizand el método .find que busca el primer elemento que cumple una condición especificada, aquí busca un producto cuyo id sea igual al valor dado por idProduct. Si no se encuentra el id especificado, se muestra un mensaje de error, caso contrario muestra un mensaje exitoso e imprime el objeto del producto */    
     getProductById(idProduct) {
         const product = this.products.find(product => product.id === idProduct);
@@ -56,7 +52,6 @@ class ProductManager {
     }
 }
 
-
 /* Creo una instancia de clase por medio de new que crea un nuevo objeto manejadorProductos que tiene acceso a todos los métodos y propiedades de la clase ProductManager */
 const manejadorProductos = new ProductManager();
 
@@ -65,12 +60,10 @@ manejadorProductos.addProduct('Asado', 'Corte de carne vacuna', 2100, 'https://e
 manejadorProductos.addProduct('Empanadas', 'Empanadas de carne', 300, 'https://assets.unileversolutions.com/recipes-v2/239857.jpg', 'ARG002', 50);
 manejadorProductos.addProduct('Dulce de Leche', 'Colonial', 1990, 'https://cdn.shopify.com/s/files/1/0490/7053/8901/products/diadeldulcedelecheportada_c9abc65a-0505-4523-97c4-4ae399eb341e_600x.jpg?v=1651685380', 'ARG003', 20);
 
-
 // Llamo al método getProductById para buscar productos en el arreglo products según sus id
 manejadorProductos.getProductById(1);
 manejadorProductos.getProductById(2);
 manejadorProductos.getProductById(3);
-
 
 //Finalmente, con el método getProducts obtengo el arreglo completo y lo imprimo.
 console.log(manejadorProductos.getProducts());
