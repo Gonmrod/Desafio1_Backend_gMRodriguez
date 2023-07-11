@@ -1,0 +1,21 @@
+<h1>Productos</h1>
+<div id="containerFormProducts">
+    <form>
+        <h2>Agregar producto:</h2>
+        <input type="text" placeholder="Título" name="title" id="title" required >
+        <input type="text" placeholder="Descripción" name="description" id="description" required >
+        <input type="text" placeholder="URL Imagen" name="thumbnail" id="thumbnail" required >
+        <input type="number" placeholder="Precio" name="price" id="price" required >
+        <input type="text" placeholder="Código" name="code" id="code" required >
+        <input type="number" placeholder="Stock" name="stock" id="stock" required >
+        <input type="text" placeholder="Categoría" name="category" id="category" required >
+    </form>
+        <div class="containerProducts">
+            <div class="products" id="showproducts">
+                
+            </div>
+        </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

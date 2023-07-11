@@ -1,0 +1,93 @@
+[
+    {
+      "title": "Mate",
+      "description": "Mate argentino tradicional",
+      "price": 500,
+      "thumbnail": "url de la imagen",
+      "code": "000001",
+      "stock": 100,
+      "id": 1
+    },
+    {
+      "title": "Asado",
+      "description": "Corte de carne argentino para parrilla",
+      "price": 1500,
+      "thumbnail": "url de la imagen",
+      "code": "000002",
+      "stock": 50,
+      "id": 2
+    },
+    {
+      "title": "Dulce de Leche",
+      "description": "Clásico dulce de leche argentino",
+      "price": 200,
+      "thumbnail": "url de la imagen",
+      "code": "000003",
+      "stock": 200,
+      "id": 3
+    },
+    {
+      "title": "Empanadas",
+      "description": "Empanadas argentinas de carne",
+      "price": 80,
+      "thumbnail": "url de la imagen",
+      "code": "000004",
+      "stock": 80,
+      "id": 4
+    },
+    {
+      "title": "Alfajores",
+      "description": "Alfajores argentinos de dulce de leche",
+      "price": 50,
+      "thumbnail": "url de la imagen",
+      "code": "000005",
+      "stock": 150,
+      "id": 5
+    },
+    {
+      "title": "Malbec",
+      "description": "Vino tinto argentino Malbec",
+      "price": 800,
+      "thumbnail": "url de la imagen",
+      "code": "000006",
+      "stock": 100,
+      "id": 6
+    },
+    {
+      "title": "Chimichurri",
+      "description": "Salsa argentina para acompañar asados",
+      "price": 150,
+      "thumbnail": "url de la imagen",
+      "code": "000007",
+      "stock": 50,
+      "id": 7
+    },
+    {
+      "title": "Provoleta",
+      "description": "Queso provolone a la parrilla",
+      "price": 300,
+      "thumbnail": "url de la imagen",
+      "code": "000008",
+      "stock": 40,
+      "id": 8
+    },
+    {
+      "title": "Ñoquis",
+      "description": "Plato de ñoquis caseros",
+      "price": 120,
+      "thumbnail": "url de la imagen",
+      "code": "000009",
+      "stock": 60,
+      "id": 9
+    },
+    {
+      "title": "Medialunas",
+      "description": "Medialunas argentinas de manteca",
+      "price": 80,
+      "thumbnail": "url de la imagen",
+      "code": "000010",
+      "stock": 100,
+      "id": 10
+    }
+  ]
+  
