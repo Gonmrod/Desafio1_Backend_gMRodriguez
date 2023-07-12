@@ -1,7 +1,5 @@
 import express from 'express';
 import exphbs from 'express-handlebars';
-import productsRouter from './routes/product.router.js';
-import cartRouter from './routes/cart.router.js';
 import viewsRouter from './routes/views.router.js';
 import __dirname from './utils.js';
 import { Server } from 'socket.io';
@@ -23,8 +21,6 @@ app.use((req, res, next) => {
 });
 app.use('/', viewsRouter);
 app.use(express.static(`${__dirname}/public`));
-app.use('/api/products', productsRouter);
-app.use('/api/cart', cartRouter);
 
 const server = app.listen(8080, () => console.log("Listening on port 8080"));
 

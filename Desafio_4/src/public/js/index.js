@@ -15,7 +15,6 @@ socket.on('listado', data => {
             <p>Código: ${prod.code} </p>
             <p>Precio: ${prod.price} </p>
             <p>Stock: ${prod.stock} </p>
-            <p>Categoría: ${prod.category} </p>
         </div>
     </div>`
     });

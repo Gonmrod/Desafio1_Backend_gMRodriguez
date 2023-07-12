@@ -1,18 +1,16 @@
 <div>
     <h1>Productos</h1>
-    <div class="fila">
-    {{#each products}}
+    <div class="containerProducts">
+        {{#each products}}
     <div class="CardItem" style="width: 18rem;">
-        <h5> {{this.title}} </h5>
+        <h3> {{this.title}} </h3>
         <div class="cardBody">
-            <h6> {{this.description}} </h6>
+            <h4> {{this.description}} </h4>
             <p>Código: {{this.code}} </p>
             <p>Precio: {{this.price}} </p>
             <p>Stock: {{this.stock}} </p>
-            <p>Categoría: {{this.category}} </p>
-
         </div>
     </div>
-    </div>
     {{/each}}
+    </div>
 </div>
