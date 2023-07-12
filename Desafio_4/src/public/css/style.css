@@ -72,8 +72,9 @@ body {
     margin-bottom: 5px;
   }
   
-  #showproducts {
+  #allProducts {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
   }
   

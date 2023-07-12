@@ -1,14 +1,14 @@
 const socket = io();
 
-const fila = document.getElementById('fila')
+const allProducts = document.getElementById('allProducts')
 
 socket.on('listado', data => {
     
-    let productos = ''
+    allProducts.innerHTML ="";
     
     data.products.forEach(prod => {
-        productos +=
-        `<div class="CardItem" style="width: 18rem;">
+        const product = document.createElement("p");
+        product.innerHTML= `<div class="CardItem" style="width: 18rem;">
         <h5> ${prod.title} </h5>
         <div class="cardBody">
             <h6> ${prod.description} </h6>
@@ -17,6 +17,6 @@ socket.on('listado', data => {
             <p>Stock: ${prod.stock} </p>
         </div>
     </div>`
+    allProducts.appendChild(product);
     });
-    fila.innerHTML = productos;
 });
