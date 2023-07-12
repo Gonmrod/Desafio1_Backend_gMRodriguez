@@ -67,7 +67,7 @@ router.delete('/:pid', async(req, res) =>{
 
     try{
         const productId = Number(req.params.pid);
-        const product = await manager.deleteProduct(productId);
+        const product = await manager.removeProduct(productId);
           //Verificación por socket en caso de actualización
           const products = await manager.getProducts();
           req.io.emit('listado',{products: products});

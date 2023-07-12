@@ -3,6 +3,7 @@ import exphbs from 'express-handlebars';
 import viewsRouter from './routes/views.router.js';
 import __dirname from './utils.js';
 import { Server } from 'socket.io';
+import ProductManager from './managers/ProductManager.js';
 
 const app = express();
 
@@ -25,7 +26,18 @@ app.use(express.static(`${__dirname}/public`));
 const server = app.listen(8080, () => console.log("Listening on port 8080"));
 
 const io = new Server(server);
+const productmanager = new ProductManager(`${__dirname}/files/products.json`);
 
 io.on('connection', socket => {
     console.log('Cliente conectado.');
+    socket.on('agregarProducto', async nuevoProducto =>{
+        const productoAgregado = await productmanager.addProduct(nuevoProducto);
+        if(productoAgregado){
+            const products = await productmanager.getProducts();
+            io.emit('listado', {products});
+
+        } else {
+            console.log('No se puede agregar el producto')
+        }
+    })
 });

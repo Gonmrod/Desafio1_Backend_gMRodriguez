@@ -11,6 +11,17 @@
     </form>
  <h2>Todos los productos</h2>
 <div id="allProducts"></div>
+    {{#each products}}
+    <div class="CardItem" style="width: 18rem;">
+      <h5>{{this.title}}</h5>
+      <div class="cardBody">
+        <h6>{{this.description}}</h6>
+        <p>Código: {{this.code}}</p>
+        <p>Precio: {{this.price}}</p>
+        <p>Stock: {{this.stock}}</p>
+      </div>
+    </div>
+  {{/each}}
 </div>
 
 <script src="/socket.io/socket.io.js"></script>
