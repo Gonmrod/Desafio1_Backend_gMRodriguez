@@ -1,0 +1,24 @@
+{
+  "name": "primer_preentrega",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/app.js",
+    "start": "node ./src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.0",
+    "handlebars": "^4.7.7",
+    "mongoose": "^7.4.1",
+    "nodejs": "^0.0.0",
+    "nodemon": "^2.0.22",
+    "socket.io": "^4.7.1"
+  }
+}
