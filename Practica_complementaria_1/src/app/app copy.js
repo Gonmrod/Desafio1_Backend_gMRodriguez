@@ -1,36 +1,28 @@
-import express from 'express';
-import viewsRouter from './routes/views.router.js';
-import { Server } from 'socket.io';
-import handlebars from 'express-handlebars';
-import __dirname from './utils.js';
+import express from "express";
+import { connect } from "mongoose";
+import errorHandler from "./middlewares/errorHandler.js";
+import notFoundHandler from "./middlewares/notFoundHandler.js";
+import indexRouter from "./router/index.js";
 
-const app = express();
+const PORT = 8080;
+const ready = ()=>{
+    console.log("Listening on PORT " + PORT);
+    connect('mongodb+srv://gmrodriguez:Test1234@cluster0.iuz7uhb.mongodb.net/ecommerce')
+    .then(() => console.log('Database connected.'))
+    .catch(err => console.log(err));
+}
+
+const app = express()
+
+//Middlewares
 
 app.use(express.json());
-app.use(express.urlencoded ({extended: true}));
-app.use(express.static((`${__dirname}/public`)));
-app.use('/', viewsRouter);
+app.use(express.urlencoded({extended: true}));
 
-app.engine('handlebars', handlebars.engine());
-app.set('views', `${__dirname}/views`);
-app.set('view engine', 'handlebars');
+//Router
+app.use('/api', indexRouter);
+app.use(errorHandler);
+app.use(notFoundHandler);
 
-const server = app.listen(8080, ()=> console.log('Listening on Port 8080'));
 
-const io = new Server(server);
-
-const messages = [];
-
-io.on('connection', socket => {
-    console.log('Nuevo usuario conectado.')
-
-    socket.on('message', data =>{
-        messages.push(data);
-        io.emit('messageLogs', messages);
-    });
-
-    socket.on('authenticated', data =>{
-        socket.emit('messageLogs', messages);
-        socket.broadcast.emit('newUserConnected', data);
-    });
-});
+app.listen(PORT, ready);
